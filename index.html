@@ -5,28 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이준상 이력서</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
+      background-color: #f4f4f9;
+      color: #333;
       display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #fff;
+      padding: 30px 20px;
+      border-right: 1px solid #ddd;
+      position: sticky;
+      top: 0;
       height: 100vh;
     }
 
-    /* 사이드바 */
-    .sidebar {
-      width: 200px;
-      background-color: #fff;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      overflow-y: auto;
-    }
-
     .sidebar h3 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: teal;
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #008080;
     }
 
     .sidebar ul {
@@ -35,95 +41,132 @@
     }
 
     .sidebar ul li {
-      margin: 10px 0;
-      cursor: pointer;
-      color: #333;
+      margin: 12px 0;
     }
 
     .sidebar ul li a {
       color: #333;
       text-decoration: none;
+      transition: color 0.3s;
     }
 
     .sidebar ul li a:hover {
-      text-decoration: underline;
+      color: #6639BA;
     }
 
     .content {
       flex: 1;
       padding: 40px;
       background-color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .section h2 {
-      border-bottom: 2px solid #000;
-      padding-bottom: 5px;
-      font-size: 20px;
+      border-bottom: 2px solid #6639BA;
+      padding-bottom: 6px;
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #6639BA;
     }
 
     .profile {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .highlight {
       font-size: 26px;
       font-weight: bold;
+      margin-bottom: 8px;
     }
 
     .subinfo {
-      color: #555;
+      color: #666;
+      margin-bottom: 10px;
     }
 
     .photo {
-      width: 150px;
-      height: 150px;
-      border: 2px solid #ccc;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #ddd;
       object-fit: cover;
     }
 
-    a {
-      color: teal;
-      text-decoration: none;
-    }
-
     .url-box {
-      border: 1px solid #ccc;
-      padding: 10px;
       background-color: #f0f0f0;
+      padding: 10px;
       font-family: monospace;
-      word-break: break-all;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 8px;
     }
 
+    a {
+      color: #6639BA;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .photo {
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <h3><a href="#basic">기본 정보</a></h3>
+    <h3><a href="#basic">이준상</a></h3>
     <ul>
       <li><a href="#skills">기술 스택</a></li>
       <li><a href="#career">경력</a></li>
-      <li><a href="#portpolio">포트폴리오</a></li>
+      <li><a href="#portfolio">포트폴리오</a></li>
+      <li><a href="#education">교육</a></li>
+      <li><a href="#certificate">수상 및 자격</a></li>
     </ul>
   </div>
 
   <div class="content">
-    <div class="section">
+    <div class="section" id="basic">
       <div class="profile">
         <div>
-          <div class="highlight">이준상 - 개발자 이력서 sample</div>
+          <div class="highlight">이준상</div>
           <div class="subinfo">백엔드 개발자</div>
-          <p>이메일: saler1@naver.com</p>
+          <p>📧 saler1@naver.com</p>
           <p>
-            노션 이력서:  
-            <a href="https://www.dongyang.ac.kr" target="_blank">
-              Notion 이력서 링크
-            </a>
+            📝 Notion:
+            <a href="" target="_blank">Notion</a>
+          </p>
+          <p>
+            🌱 GitHub:
+            <a href="https://github.com/hrowlxb" target="_blank">Github</a>
           </p>
         </div>
         <img src="" alt="프로필 사진" class="photo" />
@@ -132,17 +175,37 @@
 
     <div class="section" id="skills">
       <h2>기술 스택</h2>
-      <p>Back End : Spring , JAVA</p>
+      <p><strong>Back End</strong>: Spring, Java</p>
     </div>
 
-    <div class="section" id="portpolio">
-        <h2>포트폴리오</h2>
-        <p><strong>URL</strong> </p>
-        <div class="url-box">
-            https://github.com/hrowlxb
-        </div>
+    <div class="section" id="career">
+      <h2>경력</h2>
+      <p><strong>졸업작품 프로젝트</strong> – AI를 활용한 효율적인 구독관리 앱</p>
+      <ul>
+        <li>Spring - Backemd</li>
+        <li> - </li>
+      </ul>
     </div>
 
+    <div class="section" id="portfolio">
+      <h2>포트폴리오</h2>
+      <p><strong>GitHub</strong></p>
+      <div class="url-box">https://github.com/hrowlxb</div>
+      <p><strong>Notion</strong></p>
+      <div class="url-box"></div>
+    </div>
+
+    <div class="section" id="education">
+      <h2>교육</h2>
+      <p><strong>동양미래대학교</strong> – 컴퓨터소프트웨어공학과 (2020.03 ~ 2026.02)</p>
+    </div>
+
+    <div class="section" id="certificate">
+      <h2>수상 및 자격</h2>
+      <p><strong>전공동아리 DASOM 활동</strong> – 컴퓨터소프트웨어공학과 작품개발 동아리 (2024.03 ~ )</p>
+      <p><strong>교내 개발경진대회</strong> – 장려상 수상</p>
+      
+    </div>
   </div>
 </body>
 </html>
